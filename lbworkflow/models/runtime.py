@@ -284,6 +284,8 @@ class Task(models.Model):
     is_hold = models.BooleanField('Is hold', default=False)
 
     created_on = models.DateTimeField(auto_now=True)
+    tanchuang = models.SmallIntegerField(verbose_name='是否已弹窗', default='0', null=True)
+    has_readed = models.SmallIntegerField(verbose_name='是否已读', default='0', null=True)
 
     def __str__(self):
         return '%s - %s - %s' % (self.instance.summary, self.node.name, self.pk)
